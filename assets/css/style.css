@@ -1,8 +1,10 @@
 body{
 	background-image: url(../images/caves-background.jpg);
 	background-repeat: no-repeat;
-	background-size: 150%, 100%;
+	background-size: 175%, 150%;
 	background-position: center;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 20px;
 
 
 }
@@ -13,9 +15,8 @@ section{
 	padding: 5%;
 	background-color: #B0C4DE;
 	opacity: 0.6;
-	width: 400px;
+	width: 450px;
 	border: 10px solid black;
-	font-size: 22px;
 	font-color:  ;
 }
 
@@ -24,11 +25,11 @@ section{
 	margin-top: 3%;
 	margin-left: 10%;
 	padding: 25px;
-	background-color: #B0C4DE;
+	background-color: #7FFF00;
 	opacity: 0.5;
 	width: 200px;
 	border: 10px solid black;
-	font-size: 22px;
+
 }
 
 #scores {
@@ -38,9 +39,8 @@ section{
 	background-color: #B0C4DE;
 	opacity: 0.6;
 	width: 200px;
-	
 	border: 10px solid black;
-	font-size: 22px;
+	
 }
 
 #clear, #green, #purple, #yellow{
@@ -54,17 +54,16 @@ section{
 	margin-left: 10%;
 }
 img {
-	
 	border: 10px solid #B0C4DE;
 }
 
 #yourNum {
 	margin:auto;
 	padding: 25px;
-	background-color: #B0C4DE;
+	background-color: yellow;
 	opacity: 0.6;
 	width: 200px;
-	border: 10px solid yellow;
-	font-size: 22px;
+	border: 10px solid black;
+
 }
 

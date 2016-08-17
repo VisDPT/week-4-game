@@ -48,20 +48,21 @@
 */
 
 $(document).ready(function(){
-
+	//Variables
 	var wins =0;
 	var losses = 0;
-	var userNumber =0;
+	var totalScore =0;
 
 
-	//Assignment of Random number between 19-120
+	//Setting random number function
 	function randomNumberFromRange(minRandomNum,maxRandomNum){
 	    return Math.floor(Math.random()*((maxRandomNum - minRandomNum)+1) + minRandomNum);
 	}
-		var randomNums = randomNumberFromRange(19,120);
-		
+	//Assignment of Random number between 19-120
+	var randomNums = randomNumberFromRange(19,120);
 
-	$("#randomNum").html("Random Number:" + randomNums);
+
+	$("#randomNum").html("Random Number: " + randomNums);
 
 	$("#scores").html("Wins: " + 
 		wins + 
@@ -70,10 +71,9 @@ $(document).ready(function(){
 		"</p>");
 
 	$("#clear").on("click", function(){
-		var crystal1 = randomNumberFromRange(1,12);
-		console.log(crystal1);
-		$("#yourNum").math('+', userNumber, crystal1);
-		
+		var crystal1 = randomNumberFromRange(1,12); 	//Assignment of random number to Crystals
+		console.log(crystal1); //logging it to developer tools
+		//$("#yourNum").math('+', totalScore, crystal1);
 	})
 
 	$("#green").on("click", function(){
@@ -83,20 +83,43 @@ $(document).ready(function(){
 	})
 
 	$("#purple").on("click", function(){
-		var crystal3 = randomNumberFromRange(1,12);
+		var crystal3 = randomNumberFromRange(1,12);	
 		console.log(crystal3);
 		//userNumber+= crystal3;
 	})
 
 	$("#yellow").on("click", function(){
-		var crystal4 = randomNumberFromRange(1,12);
+		var crystal4 = randomNumberFromRange(1,12);	
 		console.log(crystal4);
 		//userNumber+= crystal4;
 	})
 
+/*
+	if (totalScore = randomNums){
+		$(totalScore).empty(); //resets total score
+
+
+    }
+
+	} else if (totalScore < randomNums){
+		//keep adding crystal numbers
+	} */
+
+/* to toggle buttons 
+<script>
+$( document ).click(function() {
+  $( "#toggle" ).toggle( "bounce", { times: 3 }, "slow" );
+});
+</script>
+
+https://api.jqueryui.com/bounce-effect/
+*/
+
+
+
 //	var userNumTotal
 
-	$("#yourNum").html("Your Total Score is: "+ userNumber);
+	$("#yourNum").html("Your Total Score is: "+ totalScore);
 	
 
 
