@@ -10,19 +10,50 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 	<!-- Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Lakki+Reddy' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 	
-	<link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
 
-	<title></title>
+	<!-- Added link to the jQuery Library -->
+   <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+	<title>CRYSTAL COLLECTOR</title>
 
 </head>
 <body>
 
-
-	<script src="assets/javascript/game.js">
+	<!-- INSTRUCTIONS --> 
+	<section id="instructions" >
+		<h1> Crystal Collector!</h1>
+		<h2> HOW TO PLAY: </h2>
+			<p> You will be given a random number at the start of the game.  There are 4 crystals below.  By clicking on a crystal, add a specific amount of points to your total score. </p>
+			<p> You win the game by matching your total score to random number.
+				You lose if your total score goes over random number </p>
+			<p>The value of each crystal is hidden from you until you click on it.  Each time the game resets, the crystals will also be assigned new values.</p>
+	</section>
 	
-	</script>
+	<div id ="randomNum">	
+	</div>
+	
+	<div id ="scores">	
+	</div>
+	
+	<div class ="buttons">	
+		<img id ="clear" src="assets/images/clearblue.png">
+		<img id ="green" src="assets/images/green.png">
+		<img id ="purple" src="assets/images/purple.png">
+		<img id ="yellow" src="assets/images/yellow.png">
+	</div>
+	<div id="yourNum">	
+	</div>
+
+	
+
+
+
+
+
+
+	
+	<script src="assets/javascript/game.js"></script>
+
 </body>
 </html>

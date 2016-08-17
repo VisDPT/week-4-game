@@ -1,0 +1,70 @@
+body{
+	background-image: url(../images/caves-background.jpg);
+	background-repeat: no-repeat;
+	background-size: 150%, 100%;
+	background-position: center;
+
+
+}
+
+section{
+	margin-top: 3%;
+	margin-left: 10%;
+	padding: 5%;
+	background-color: #B0C4DE;
+	opacity: 0.6;
+	width: 400px;
+	border: 10px solid black;
+	font-size: 22px;
+	font-color:  ;
+}
+
+
+#randomNum {
+	margin-top: 3%;
+	margin-left: 10%;
+	padding: 25px;
+	background-color: #B0C4DE;
+	opacity: 0.5;
+	width: 200px;
+	border: 10px solid black;
+	font-size: 22px;
+}
+
+#scores {
+	margin-top: 3%;
+	margin-left: 10%;
+	padding: 25px;
+	background-color: #B0C4DE;
+	opacity: 0.6;
+	width: 200px;
+	
+	border: 10px solid black;
+	font-size: 22px;
+}
+
+#clear, #green, #purple, #yellow{
+	height: 100px;
+	width: 100px;
+	margin-top: 3%;
+	margin: 3%;
+}
+
+#clear{
+	margin-left: 10%;
+}
+img {
+	
+	border: 10px solid #B0C4DE;
+}
+
+#yourNum {
+	margin:auto;
+	padding: 25px;
+	background-color: #B0C4DE;
+	opacity: 0.6;
+	width: 200px;
+	border: 10px solid yellow;
+	font-size: 22px;
+}
+
