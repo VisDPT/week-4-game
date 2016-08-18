@@ -1,72 +1,120 @@
 body{
 	background-image: url(../images/caves-background.jpg);
 	background-repeat: no-repeat;
-	background-size: 175%, 150%;
+	background-size: 200%, 175%;
 	background-position: center;
 	font-family: "Arial Black", Gadget, sans-serif;
 	font-size: 20px;
+	align-items: center;
 
 
 }
 
 section{
 	margin-top: 3%;
-	margin-left: 10%;
-	padding: 5%;
+	margin-left: 30px;
+	padding: 30px;
 	background-color: #B0C4DE;
 	opacity: 0.6;
-	width: 450px;
+	width: 600px;
 	border: 10px solid black;
-	font-color:  ;
+	height: auto;
+	text-align: center;
+	
 }
 
+h1 {
+	font-size: 45px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+#win{
+	color: green;
+	text-decoration: underline;
+}
 
-#randomNumber {
-	margin-top: 3%;
-	margin-left: 10%;
-	padding: 25px;
+#lose{
+	color: red;
+	text-decoration: underline
+}
+
+#randomNumber
+ {
+	margin-top: 15px;
+	margin-left: 40px;
+	padding: 15px;
 	background-color: #7FFF00;
 	opacity: 0.5;
-	width: 200px;
+	width: 160px;
 	border: 10px solid black;
+	float: left;
 
 }
 
 #scores {
-	margin-top: 3%;
-	margin-left: 10%;
-	padding: 25px;
+	margin-top: 15px;
+	margin-left: 10px;
+	padding: 15px;
 	background-color: #DDA0DD;
 	opacity: 0.6;
-	width: 200px;
+	width: 160px;
 	border: 10px solid black;
-	
+	float: left;
+	height: 60px;
 }
 
-#clear, #green, #purple, #yellow{
-	height: 100px;
-	width: 100px;
-	margin-top: 3%;
-	margin: 3%;
+#yourNum {
+	margin-top: 15px;
+	margin-left: 10px;
+	padding: 15px;
+	background-color: yellow;
+	opacity: 0.6;
+	width: 160px;
+	border: 10px solid black;
+	float: left;
+	height: 60px;
+
 }
 
-#clear{
-	margin-left: 10%;
+.crystals {
+	clear: both;
+
 }
-
-
 
 img {
 	border: 10px solid #B0C4DE;
 }
 
-#yourNum {
-	margin:auto;
-	padding: 25px;
-	background-color: yellow;
-	opacity: 0.6;
-	width: 200px;
-	border: 10px solid black;
+#clear, #green, #purple, #yellow{
+	height: 100px;
+	width: 100px;
+	margin-top: 10px;
+	margin: 20px;
 
+	
 }
+
+#clear{
+	margin-left: 53px;
+	
+}
+
+p{
+	text-align: center;
+}
+img:hover {
+	opacity: 0.6;
+	border-width:15px;	
+    border-style:groove;
+    border-color: white;
+}
+
+
+
+
+
+
+
+
+
 

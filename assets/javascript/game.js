@@ -1,19 +1,4 @@
 /* PSEUDO CODING FOR CRYSTALS COLLECTOR - (similar to hangman)
-	There will be four crystals displayed as buttons on the page.
-	The player will be shown a random number at the start of the game.
-	When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
-	Your game will hide this amount until the player clicks a crystal.
-	When they do click one, update the player's score counter.
-	The player wins if their total score matches the random number from the beginning of the game.
-	The player loses if their score goes above the random number.
-	The game restarts whenever the player wins or loses.
-	When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
-	The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
-
-	Game design notes:
-	The random number shown at the start of the game should be between 19 - 120.
-	Each crystal should have a random hidden value between 1 - 12.
-
 
 
 	HOW TO PLAY
@@ -29,21 +14,6 @@
 	- if your number > random number, --> loss
 	- total score adding
 
-<h1> Crystal Collector!</h1>
-		<h2> HOW TO PLAY: </h2>
-			<p> You will be given a random number at the start of the game.  There are 4 crystals below.  By clicking on a crystal, add a specific amount of points to your total score. </p>
-			<p> You win the game by matching your total score to random number.
-				You lose if your total score goes over random number </p>
-			<p>The value of each crystal is hidden from you until you click on it.  Each time the game resets, the crystals will also be assigned new values.</p>
-<div class ="randomNum">	
-	</div>
-	<div class ="scores">	
-	</div>
-	<div class ="buttons">	
-	</div>
-	<div class ="yourNum">	
-	</div>
-
 
 */
 
@@ -52,6 +22,18 @@ $(document).ready(function(){
 	var wins =0;
 	var losses = 0;
 	var userScore =0;
+
+	var audioWin = new Audio();
+	audioWin.src = "assets/audio/youwin.mov";
+	function playWinSound(num){
+		audioWin.play();
+	}
+
+	var audioLose = new Audio();
+	audioLose.src = "assets/audio/YouLose.mov";
+	function playLoseSound(num){
+		audioLose.play();
+	}
 	
 
 	//Setting random number function
@@ -70,32 +52,87 @@ $(document).ready(function(){
 	var crystal4 = randomNumberFromRange(1,12);
 
 
-	$("#randomNumber").html("Random Number: " + randomNum);
+	$("#randomNumber").html("<p>Random</p>" +
+		"<p> Number: </p>" + 
+		"<p>" + 
+		randomNum + 
+		"</p>");
 
-	$("#scores").html("Wins: " + 
+	$("#scores").html("<p> Wins: " + 
 		wins + 
+		"</p>" +
 		"<p> Losses: " + 
 		losses + 
 		"</p>");
 
-	$("#yourNum").html("Your Total Score is: "+ userScore);
+	$("#yourNum").html("<p>Your Number</p>" +
+		"<p>is: </p>"+ 
+		"<p>" + 
+		userScore + 
+		"</p>");
 
 	$(".crystals").on("click", function(){
 		if (randomNum === userScore){
-							userScore = 0;
-							$("#yourNum").html("Your Total Score is: "+ userScore);
-							wins++;
-							console.log(wins + "you win");
-							$("#scores").html("Wins: " + wins);
-							
-						} 
-						else if(randomNum < userScore){
-								userScore = 0;
-								$("#yourNum").html("Your Total Score is: "+ userScore);
-								losses++;
-								console.log(losses + "you lose");
-								$("#scores").html("Losses: " + losses);
-						}
+			audioWin.play();
+			userScore = 0;
+			$("#yourNum").html("<p>Your Number</p>" +
+				"<p>is: </p>"+ 
+				"<p>" + 
+				userScore + 
+				"</p>");
+			wins++;
+			console.log(wins + "you win");
+			$("#scores").html("<p> Wins: " + 
+				wins + 
+				"</p>" +
+				"<p> Losses: " + 
+				losses + 
+				"</p>");
+
+			randomNum = randomNumberFromRange(19,120);
+			$("#randomNumber").html("<p>Random</p>" +
+				"<p> Number: </p>" +
+				 "<p>" +
+				 randomNum +
+				 "</p>");
+
+
+
+			crystal1 = randomNumberFromRange(1,12); 
+			crystal2 = randomNumberFromRange(1,12);
+			crystal3 = randomNumberFromRange(1,12);	
+			crystal4 = randomNumberFromRange(1,12);		
+		}
+		else if(randomNum < userScore){
+			userScore = 0;
+			$("#yourNum").html("<p>Your Number</p>" +
+			 	"<p>" +
+			 	userScore +
+			 	"</p>");
+			losses++;
+			audioLose.play();
+			console.log(losses + "you lose");
+			$("#scores").html("<p> Wins: " + 
+				wins + 
+				"</p>" +
+				"<p> Losses: " + 
+				losses + 
+				"</p>");
+
+			randomNum = randomNumberFromRange(19,120);
+			$("#randomNumber").html("<p>Random</p>" +
+				"<p> Number: </p>" +
+			 	"<p>" +
+			 	randomNum +
+			 	"</p>");
+
+
+			crystal1 = randomNumberFromRange(1,12); 
+			crystal2 = randomNumberFromRange(1,12);
+			crystal3 = randomNumberFromRange(1,12);	
+			crystal4 = randomNumberFromRange(1,12);
+			
+		}
 
 	});
 
@@ -103,102 +140,50 @@ $(document).ready(function(){
 			$("#clear").on("click", function(){
 				console.log(crystal1); //logging it to developer tools
 				userScore = userScore + crystal1;
-				$("#yourNum").html("Your Total Score is: "+ userScore);
-				/*		if (randomNum === userScore){
-							userScore = 0;
-							$("#yourNum").html("Your Total Score is: "+ userScore);
-							wins++;
-							console.log(wins + "you win");
-							$("#scores").html("Wins: " + wins);
-						} 
-						else if(randomNum < userScore){
-								userScore = 0;
-								$("#yourNum").html("Your Total Score is: "+ userScore);
-								losses++;
-								console.log(losses + "you lose");
-								$("#scores").html("Losses: " + losses);
-						}
-
-				*/
+				$("#yourNum").html("<p>Your Number</p>" +
+					"<p>" + 
+					userScore + 
+					"</p>");
 			});
 
 			$("#green").on("click", function(){
 				console.log(crystal2);
 				userScore = userScore + crystal2;
-				$("#yourNum").html("Your Total Score is: "+ userScore);
-				//userNumber+= crystal2;
-						if (randomNum === userScore){
-							userScore = 0;
-							$("#yourNum").html("Your Total Score is: "+ userScore);
-							wins++;
-							console.log(wins + "you win")
-							$("#scores").html("Wins: " + wins)
-						} 
-						else if(randomNum < userScore){
-								userScore = 0;
-								$("#yourNum").html("Your Total Score is: "+ userScore);
-								losses++;
-								console.log(losses + "you lose")
-								$("#scores").html("Losses: " + losses)
-						}
+				$("#yourNum").html("<p>Your Number</p>" +
+					"<p>" + 
+					userScore + 
+					"</p>");
 			});
 
 			$("#purple").on("click", function(){
 				console.log(crystal3);
 				userScore = userScore + crystal3;
-				$("#yourNum").html("Your Total Score is: "+ userScore)
-				//userNumber+= crystal3;
+				$("#yourNum").html("<p>Your Number</p>" +
+					"<p>" + 
+					userScore + 
+					"</p>");
 			});			
-						if (randomNum === userScore){
-							userScore = 0;
-							$("#yourNum").html("Your Total Score is: "+ userScore);
-							wins++;
-							console.log(wins + "you win")
-							$("#scores").html("Wins: " + wins)
-						} 
-						else if(randomNum < userScore){
-								userScore = 0;
-								$("#yourNum").html("Your Total Score is: "+ userScore);
-								losses++;
-								console.log(losses + "you lose")
-								$("#scores").html("Losses: " + losses)
-						}
-
+			
 			$("#yellow").on("click", function(){
 				console.log(crystal4);
 				userScore = userScore + crystal4;
-				$("#yourNum").html("Your Total Score is: "+ userScore)
-				//userNumber+= crystal4;
-						if (randomNum === userScore){
-							userScore = 0;
-							$("#yourNum").html("Your Total Score is: "+ userScore);
-							wins++;
-							console.log(wins + "you win")
-							$("#scores").html("Wins: " + wins)
-						} 
-						else if(randomNum < userScore){
-								userScore = 0;
-								$("#yourNum").html("Your Total Score is: "+ userScore);
-								losses++;
-								console.log(losses + "you lose")
-								$("#scores").html("Losses: " + losses)
-						}
+				$("#yourNum").html("<p>Your Number</p>" +
+					"<p>" + 
+					userScore + 
+					"</p>");
 			});
 
-	$("#scores").html("Wins: " + 
+	$("#scores").html("<p> Wins: " + 
 		wins + 
+		"</p>" +
 		"<p> Losses: " + 
 		losses + 
 		"</p>");
 
+	$("#yourNum").html("<p>Your Number</p>" +
+		"<p>" + 
+		userScore + 
+		"</p>");
 
-
-		
-
-			
-
-//	var userNumTotal
-
-	//$("#yourNum").html("Your Total Score is: "+ userScore);
 
 });
