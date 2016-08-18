@@ -51,18 +51,26 @@ $(document).ready(function(){
 	//Variables
 	var wins =0;
 	var losses = 0;
-	var totalScore =0;
-
+	var userScore =0;
+	
 
 	//Setting random number function
 	function randomNumberFromRange(minRandomNum,maxRandomNum){
 	    return Math.floor(Math.random()*((maxRandomNum - minRandomNum)+1) + minRandomNum);
 	}
+	
+
 	//Assignment of Random number between 19-120
-	var randomNums = randomNumberFromRange(19,120);
+	var randomNum = randomNumberFromRange(19,120);
+
+	//Assignment of random number to Crystals
+	var crystal1 = randomNumberFromRange(1,12); 
+	var crystal2 = randomNumberFromRange(1,12);
+	var crystal3 = randomNumberFromRange(1,12);	
+	var crystal4 = randomNumberFromRange(1,12);
 
 
-	$("#randomNum").html("Random Number: " + randomNums);
+	$("#randomNumber").html("Random Number: " + randomNum);
 
 	$("#scores").html("Wins: " + 
 		wins + 
@@ -70,62 +78,65 @@ $(document).ready(function(){
 		losses + 
 		"</p>");
 
-	$("#clear").on("click", function(){
-		var crystal1 = randomNumberFromRange(1,12); 	//Assignment of random number to Crystals
-		console.log(crystal1); //logging it to developer tools
-		//$("#yourNum").math('+', totalScore, crystal1);
-	})
+	$("#yourNum").html("Your Total Score is: "+ userScore);
 
-	$("#green").on("click", function(){
-		var crystal2 = randomNumberFromRange(1,12);
-		console.log(crystal2);
-		//userNumber+= crystal2;
-	})
+		
 
-	$("#purple").on("click", function(){
-		var crystal3 = randomNumberFromRange(1,12);	
-		console.log(crystal3);
-		//userNumber+= crystal3;
-	})
+	//if (randomNum > userScore){
+			$("#clear").on("click", function(){
+				console.log(crystal1); //logging it to developer tools
+				userScore = userScore + crystal1;
+				$("#yourNum").html("Your Total Score is: "+ userScore);
 
-	$("#yellow").on("click", function(){
-		var crystal4 = randomNumberFromRange(1,12);	
-		console.log(crystal4);
-		//userNumber+= crystal4;
-	})
+				//$("#yourNum").math('+', totalScore, crystal1);
+			});
 
-/*
-	if (totalScore = randomNums){
-		$(totalScore).empty(); //resets total score
+			$("#green").on("click", function(){
+				console.log(crystal2);
+				userScore = userScore + crystal2;
+				$("#yourNum").html("Your Total Score is: "+ userScore);
+				//userNumber+= crystal2;
+			});
 
+			$("#purple").on("click", function(){
+				console.log(crystal3);
+				userScore = userScore + crystal3;
+				$("#yourNum").html("Your Total Score is: "+ userScore)
+				//userNumber+= crystal3;
+			});
 
-    }
+			$("#yellow").on("click", function(){
+				console.log(crystal4);
+				userScore = userScore + crystal4;
+				$("#yourNum").html("Your Total Score is: "+ userScore)
+				//userNumber+= crystal4;
+			});
 
-	} else if (totalScore < randomNums){
-		//keep adding crystal numbers
-	} */
-
-/* to toggle buttons 
-<script>
-$( document ).click(function() {
-  $( "#toggle" ).toggle( "bounce", { times: 3 }, "slow" );
-});
-</script>
-
-https://api.jqueryui.com/bounce-effect/
-*/
+	//}
+	if (randomNum === userScore){
+			userScore = 0;
+			$("#yourNum").html("Your Total Score is: "+ userScore);
+			wins++;
+			console.log(Wins + "you win")
+			$("#scores").html("Wins: " + wins)
 
 
+	} 
+	else if(randomNum < userScore){
+			userScore = 0;
+			$("#yourNum").html("Your Total Score is: "+ userScore);
+			losses++;
+			console.log(losses + "you lose")
+			$("#scores").html("Losses: " + losses)
+	}
+
+
+		
+
+			
 
 //	var userNumTotal
 
-	$("#yourNum").html("Your Total Score is: "+ totalScore);
-	
+	//$("#yourNum").html("Your Total Score is: "+ userScore);
 
-
-
-
-
-
-
-})
+});

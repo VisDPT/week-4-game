@@ -21,7 +21,7 @@ section{
 }
 
 
-#randomNum {
+#randomNumber {
 	margin-top: 3%;
 	margin-left: 10%;
 	padding: 25px;
@@ -36,7 +36,7 @@ section{
 	margin-top: 3%;
 	margin-left: 10%;
 	padding: 25px;
-	background-color: #B0C4DE;
+	background-color: #DDA0DD;
 	opacity: 0.6;
 	width: 200px;
 	border: 10px solid black;
@@ -53,6 +53,9 @@ section{
 #clear{
 	margin-left: 10%;
 }
+
+
+
 img {
 	border: 10px solid #B0C4DE;
 }
