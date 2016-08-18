@@ -80,15 +80,46 @@ $(document).ready(function(){
 
 	$("#yourNum").html("Your Total Score is: "+ userScore);
 
-		
+	$(".crystals").on("click", function(){
+		if (randomNum === userScore){
+							userScore = 0;
+							$("#yourNum").html("Your Total Score is: "+ userScore);
+							wins++;
+							console.log(wins + "you win");
+							$("#scores").html("Wins: " + wins);
+							
+						} 
+						else if(randomNum < userScore){
+								userScore = 0;
+								$("#yourNum").html("Your Total Score is: "+ userScore);
+								losses++;
+								console.log(losses + "you lose");
+								$("#scores").html("Losses: " + losses);
+						}
+
+	});
 
 	//if (randomNum > userScore){
 			$("#clear").on("click", function(){
 				console.log(crystal1); //logging it to developer tools
 				userScore = userScore + crystal1;
 				$("#yourNum").html("Your Total Score is: "+ userScore);
+				/*		if (randomNum === userScore){
+							userScore = 0;
+							$("#yourNum").html("Your Total Score is: "+ userScore);
+							wins++;
+							console.log(wins + "you win");
+							$("#scores").html("Wins: " + wins);
+						} 
+						else if(randomNum < userScore){
+								userScore = 0;
+								$("#yourNum").html("Your Total Score is: "+ userScore);
+								losses++;
+								console.log(losses + "you lose");
+								$("#scores").html("Losses: " + losses);
+						}
 
-				//$("#yourNum").math('+', totalScore, crystal1);
+				*/
 			});
 
 			$("#green").on("click", function(){
@@ -96,6 +127,20 @@ $(document).ready(function(){
 				userScore = userScore + crystal2;
 				$("#yourNum").html("Your Total Score is: "+ userScore);
 				//userNumber+= crystal2;
+						if (randomNum === userScore){
+							userScore = 0;
+							$("#yourNum").html("Your Total Score is: "+ userScore);
+							wins++;
+							console.log(wins + "you win")
+							$("#scores").html("Wins: " + wins)
+						} 
+						else if(randomNum < userScore){
+								userScore = 0;
+								$("#yourNum").html("Your Total Score is: "+ userScore);
+								losses++;
+								console.log(losses + "you lose")
+								$("#scores").html("Losses: " + losses)
+						}
 			});
 
 			$("#purple").on("click", function(){
@@ -103,32 +148,49 @@ $(document).ready(function(){
 				userScore = userScore + crystal3;
 				$("#yourNum").html("Your Total Score is: "+ userScore)
 				//userNumber+= crystal3;
-			});
+			});			
+						if (randomNum === userScore){
+							userScore = 0;
+							$("#yourNum").html("Your Total Score is: "+ userScore);
+							wins++;
+							console.log(wins + "you win")
+							$("#scores").html("Wins: " + wins)
+						} 
+						else if(randomNum < userScore){
+								userScore = 0;
+								$("#yourNum").html("Your Total Score is: "+ userScore);
+								losses++;
+								console.log(losses + "you lose")
+								$("#scores").html("Losses: " + losses)
+						}
 
 			$("#yellow").on("click", function(){
 				console.log(crystal4);
 				userScore = userScore + crystal4;
 				$("#yourNum").html("Your Total Score is: "+ userScore)
 				//userNumber+= crystal4;
+						if (randomNum === userScore){
+							userScore = 0;
+							$("#yourNum").html("Your Total Score is: "+ userScore);
+							wins++;
+							console.log(wins + "you win")
+							$("#scores").html("Wins: " + wins)
+						} 
+						else if(randomNum < userScore){
+								userScore = 0;
+								$("#yourNum").html("Your Total Score is: "+ userScore);
+								losses++;
+								console.log(losses + "you lose")
+								$("#scores").html("Losses: " + losses)
+						}
 			});
 
-	//}
-	if (randomNum === userScore){
-			userScore = 0;
-			$("#yourNum").html("Your Total Score is: "+ userScore);
-			wins++;
-			console.log(Wins + "you win")
-			$("#scores").html("Wins: " + wins)
+	$("#scores").html("Wins: " + 
+		wins + 
+		"<p> Losses: " + 
+		losses + 
+		"</p>");
 
-
-	} 
-	else if(randomNum < userScore){
-			userScore = 0;
-			$("#yourNum").html("Your Total Score is: "+ userScore);
-			losses++;
-			console.log(losses + "you lose")
-			$("#scores").html("Losses: " + losses)
-	}
 
 
 		
