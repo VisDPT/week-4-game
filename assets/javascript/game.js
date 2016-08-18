@@ -30,7 +30,7 @@ $(document).ready(function(){
 	}
 
 	var audioLose = new Audio();
-	audioLose.src = "assets/audio/YouLose.mov";
+	audioLose.src = "assets/audio/AaliyahTryAgain.mov";
 	function playLoseSound(num){
 		audioLose.play();
 	}
