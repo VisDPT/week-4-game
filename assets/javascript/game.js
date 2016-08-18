@@ -24,7 +24,7 @@ $(document).ready(function(){
 	var userScore =0;
 
 	var audioWin = new Audio();
-	audioWin.src = "assets/audio/youwin.mov";
+	audioWin.src = "assets/audio/AllIDoisWin.mov"; //DJ khaled "All I do is Win" clip plays
 	function playWinSound(num){
 		audioWin.play();
 	}
@@ -131,7 +131,6 @@ $(document).ready(function(){
 			crystal2 = randomNumberFromRange(1,12);
 			crystal3 = randomNumberFromRange(1,12);	
 			crystal4 = randomNumberFromRange(1,12);
-			
 		}
 
 	});
