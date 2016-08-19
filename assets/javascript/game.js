@@ -7,13 +7,13 @@ $(document).ready(function(){
 	var userScore =0;
 
 	var audioWin = new Audio();
-	audioWin.src = "assets/audio/AllIDoisWin.mov"; //DJ khaled "All I do is Win" clip plays
+	audioWin.src = "assets/audio/AllIDoisWin.mov"; //DJ khaled "All I do is Win" clip plays when you win
 	function playWinSound(num){
 		audioWin.play();
 	}
 
 	var audioLose = new Audio();
-	audioLose.src = "assets/audio/AaliyahTryAgain.mov";
+	audioLose.src = "assets/audio/AaliyahTryAgain.mov"; //Aaliyah Try Again plays when you lose
 	function playLoseSound(num){
 		audioLose.play();
 	}
