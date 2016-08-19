@@ -1,21 +1,4 @@
-/* PSEUDO CODING FOR CRYSTALS COLLECTOR - (similar to hangman)
 
-
-	HOW TO PLAY
-	Randomly generated # at start of game (#19-120)
-	4 crystals with each one representing a hidden # which is points fo rthat crystal
-	GOAL: click on random crystals to have your total score = random number
-	after each wins, crystal also resets bw #1-12
-	if you go over, you get a loss
-	
-	PSEUDO CODING OF WHAT IS NEEDED
-	- assign random number to start of game
-	- When you get a win, crystals and random # reset
-	- if your number > random number, --> loss
-	- total score adding
-
-
-*/
 
 $(document).ready(function(){
 	//Variables
@@ -135,42 +118,41 @@ $(document).ready(function(){
 
 	});
 
-	//if (randomNum > userScore){
-			$("#clear").on("click", function(){
-				console.log(crystal1); //logging it to developer tools
-				userScore = userScore + crystal1;
-				$("#yourNum").html("<p>Your Number</p>" +
-					"<p>" + 
-					userScore + 
-					"</p>");
-			});
+	$("#clear").on("click", function(){
+		console.log(crystal1); //logging it to developer tools
+		userScore = userScore + crystal1;
+		$("#yourNum").html("<p>Your Number</p>" +
+			"<p>" + 
+			userScore + 
+			"</p>");
+	});
 
-			$("#green").on("click", function(){
-				console.log(crystal2);
-				userScore = userScore + crystal2;
-				$("#yourNum").html("<p>Your Number</p>" +
-					"<p>" + 
-					userScore + 
-					"</p>");
-			});
+	$("#green").on("click", function(){
+		console.log(crystal2);
+		userScore = userScore + crystal2;
+		$("#yourNum").html("<p>Your Number</p>" +
+			"<p>" + 
+			userScore + 
+			"</p>");
+	});
 
-			$("#purple").on("click", function(){
-				console.log(crystal3);
-				userScore = userScore + crystal3;
-				$("#yourNum").html("<p>Your Number</p>" +
-					"<p>" + 
-					userScore + 
-					"</p>");
-			});			
+	$("#purple").on("click", function(){
+		console.log(crystal3);
+		userScore = userScore + crystal3;
+		$("#yourNum").html("<p>Your Number</p>" +
+			"<p>" + 
+			userScore + 
+			"</p>");
+	});			
 			
-			$("#yellow").on("click", function(){
-				console.log(crystal4);
-				userScore = userScore + crystal4;
-				$("#yourNum").html("<p>Your Number</p>" +
-					"<p>" + 
-					userScore + 
-					"</p>");
-			});
+	$("#yellow").on("click", function(){
+		console.log(crystal4);
+		userScore = userScore + crystal4;
+		$("#yourNum").html("<p>Your Number</p>" +
+			"<p>" + 
+			userScore + 
+			"</p>");
+	});
 
 	$("#scores").html("<p> Wins: " + 
 		wins + 
@@ -184,5 +166,21 @@ $(document).ready(function(){
 		userScore + 
 		"</p>");
 
-
 });
+
+/* PSEUDO CODING FOR CRYSTALS COLLECTOR - (similar to hangman)
+
+	HOW TO PLAY
+	Randomly generated # at start of game (#19-120)
+	4 crystals with each one representing a hidden # which is points fo rthat crystal
+	GOAL: click on random crystals to have your total score = random number
+	after each wins, crystal also resets bw #1-12
+	if you go over, you get a loss
+	
+	PSEUDO CODING OF WHAT IS NEEDED
+	- assign random number to start of game
+	- When you get a win, crystals and random # reset
+	- if your number > random number, --> loss
+	- total score adding
+
+*/
